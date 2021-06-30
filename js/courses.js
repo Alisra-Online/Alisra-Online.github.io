@@ -12,12 +12,15 @@ const Components = {
     disLinks: document.querySelectorAll('.disbtn'), 
     registerLinks: document.querySelectorAll('.regButton'),
     modPop: document.querySelector('.regFormParent'),
+    regmain: document.querySelector('.regmain'),
     courseTitle: document.querySelector('.c-title'),
     cMove: document.querySelector('.c-move'),
     modalClose:document.querySelector('.mdl-close'),
     shareui:document.querySelector('.share-ui'),
     shareBtns:document.querySelectorAll('.share-btn'),
-    courseValue: document.querySelector('.courseValue')
+    courseValue: document.querySelector('.courseValue'),
+    successAlert: document.querySelector('.succes-alert'),
+    FormBtn: document.querySelector('.s-btn'),
 }
 const tl = gsap.timeline({defaults:{ease:Expo.Power2}});
 
@@ -70,6 +73,7 @@ function registerFunc() {
     })
     Components.modalClose.addEventListener('click', (event) => {
         tl.to(Components.modPop, {scale:0, ease:Expo.easeInOut})
+        tform.reverse();
         event.preventDefault();
     })
 
@@ -79,16 +83,27 @@ function registerFunc() {
 }
 
 
+let tform = gsap.timeline();
+tform.pause(true);
+
+tform.to(Components.regmain, {autoAlpha:0,})
+tform.to(Components.regmain, {display:'none',})
+tform.to(Components.successAlert, {display:'flex'})
+tform.to(Components.successAlert, {autoAlpha:1})
+tform.to(Components.successAlert, {scale:1})
 
 function emailWorkAround() {
+   
     emailjs.init('user_FZbLPdUUuRphq0FCxBijP');
-    document.getElementById('regMain').addEventListener('submit', (event) => {
+    Components.regmain.addEventListener('submit', (event) => {
         event.preventDefault();
-        emailjs.sendForm('service_alisra3397','template_junf2b2',document.querySelector('.regmain'))
+        
+        emailjs.sendForm('service_alisra3397','template_junf2b2',Components.regmain)
             .then(function() {
-                console.log('SUCCESS!');
+                tform.play();
+                Components.FormBtn.style.background = 'chartreuse'
             }, function(error) {
-                console.log('FAILED...', error);
+                Components.FormBtn.style.background = 'red'
             });
     });
 }
