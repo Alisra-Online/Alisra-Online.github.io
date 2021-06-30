@@ -1164,8 +1164,28 @@ footer .cpyrt{
     border: none;
     outline: none; 
 }
-
-
+.google-recap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+.succes-alert{
+    transform: scale(0);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.succes-alert img {
+    width: 100px;
+}
+.succes-alert h3 {
+    margin: 20px 0px;
+}
 @media (max-width:955px){
     .rm-r-mb{
         display: none;
