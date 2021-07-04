@@ -10,7 +10,7 @@
         <meta name="keywords" content="Online, Quran, Academy, Tajweed, Translation, Learn, Arabic" />
         <meta name="author" content="Hasbu" />
         <title>Quran Academy</title>
-        <link rel="stylesheet" href="css/style.css" /> 
+        <link rel="stylesheet" href="css/style.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -202,6 +202,7 @@
                 <div>
                     <input type="email" name="email_address" placeholder="Email Address" required/>
                 </div>
+                <div class="g-recaptcha google-recap" data-sitekey="6LcR4mcbAAAAAMzfAMOfv1zzcWJv6kS5wFOXdUxZ"></div>
                     <input type="submit" class="s-btn" value="Register" />
             </form>
         </div>
@@ -251,11 +252,6 @@
         </div>
         <p class="cpyrt">Copyright &copy; <span class="dateNow"></span>  <span class="h-onmb">Al Isra Academy All Rights Reserved.</span></p>
         </footer>
-        <div class="g-recaptcha"
-            data-sitekey="6LeQFnYbAAAAADxYBZiDpk7fjxkeIdsZ0aBwauSw"
-            data-callback="onSubmit"
-            data-size="invisible">
-</div>
     </body>
 </html>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -266,11 +262,3 @@
 <script src="js/ts.js" ></script>
 <script src="js/courses.js"></script>
 
-<script>
-     function onSubmit(token) {
-         document.getElementById("regMain").submit();
-         grecaptcha.execute();
-       }
-  
-
-</script>
