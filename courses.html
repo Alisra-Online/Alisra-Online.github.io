@@ -24,15 +24,15 @@
         </div>
         <nav>
             <a href="index.html" class="logo" width="180px">
-                <img src="images/logo.svg" alt="">
+                <img src="images/logo-minimal.svg" alt="">
             </a>
             <ul class="main-navigation">
                 <a href="#" class="nav-btn-link btn-close-menu"><img src="images/icons/close.png" alt="Close Icon"></a>
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="Courses.html">Courses</a></li>
-                <li class="nav-item"><a class="nav-link" href="Blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="UnderCt.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="UnderCt.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="UnderCt.html">Contact</a></li>
             </ul>
             <div class="nav-btns">
                 <a href="#" class="nav-btn-link cta"><img src="images/icons/locate.png" alt="Locate icon"></a>
@@ -182,7 +182,7 @@
 
 
 
-
+<div class="megaparent">
         <div class="regFormParent">
             <div class="succes-alert">
                 <img src="images/icons/success.svg" alt=""/>
@@ -202,11 +202,10 @@
                 <div>
                     <input type="email" name="email_address" placeholder="Email Address" required/>
                 </div>
-                <div class="g-recaptcha google-recap" data-sitekey="6LcR4mcbAAAAAMzfAMOfv1zzcWJv6kS5wFOXdUxZ"></div>
                     <input type="submit" class="s-btn" value="Register" />
             </form>
         </div>
-
+    </div>
 
         <div class="share-ui">
             <a href="#" class="share-btn"></a>
@@ -252,6 +251,11 @@
         </div>
         <p class="cpyrt">Copyright &copy; <span class="dateNow"></span>  <span class="h-onmb">Al Isra Academy All Rights Reserved.</span></p>
         </footer>
+        <div class="g-recaptcha"
+            data-sitekey="6LcR4mcbAAAAAMzfAMOfv1zzcWJv6kS5wFOXdUxZ"
+            data-callback="onSubmit"
+            data-size="invisible">
+</div>
     </body>
 </html>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -262,3 +266,11 @@
 <script src="js/ts.js" ></script>
 <script src="js/courses.js"></script>
 
+<script>
+     function onSubmit(token) {
+         document.getElementById("regMain").submit();
+         grecaptcha.execute();
+       }
+  
+
+</script>
